@@ -281,11 +281,14 @@ namespace jetpack::parser {
             return ctx->comments_;
         }
 
+        void CheckRequireCall(const Sp<CallExpression>& call);
+
         ~Parser() = default;
 
         NodeCreatedEventEmitter<ImportDeclaration> import_decl_created_listener;
         NodeCreatedEventEmitter<ExportNamedDeclaration> export_named_decl_created_listener;
         NodeCreatedEventEmitter<ExportAllDeclaration> export_all_decl_created_listener;
+        NodeCreatedEventEmitter<CallExpression> require_call_created_listener;
 
     };
 
